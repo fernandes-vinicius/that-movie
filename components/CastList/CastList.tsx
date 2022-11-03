@@ -2,15 +2,15 @@ import Slider, { Settings } from 'react-slick';
 
 import { ICast } from 'lib/tmdbAPI';
 
-import { CastCard } from 'components/CastCard';
+import CastCard from 'components/CastCard';
 
 type CastListProps = {
   cast: ICast[];
 };
 
 const settings: Settings = {
-  // className: 'center',
   // centerMode: true,
+  // className: 'center',
   // centerPadding: '48px',
   infinite: false,
   speed: 500,
@@ -48,7 +48,7 @@ const settings: Settings = {
 
 export function CastList({ cast }: CastListProps) {
   return (
-    <Slider {...settings} className="mx-6 h-full">
+    <Slider {...settings} className="mx-6">
       {cast.map((item) => (
         <div key={item.id} className="px-2 overflow-hidden">
           <CastCard key={item.id} cast={item} />

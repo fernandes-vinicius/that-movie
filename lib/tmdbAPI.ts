@@ -89,13 +89,13 @@ const tmdbAPI = {
     return res.data.results;
   },
 
-  recommendations: async (movieId?: number, page = 1) => {
+  recommendations: async (movieId: number, page = 1) => {
     const uri = `${apiBaseUrl}/movie/${movieId}/recommendations?api_key=${apiKey}&language=${language}&page=${page}`;
     const res = await axios<ResponseType<IMovie>>(uri);
     return res.data;
   },
 
-  credits: async (movieId?: number) => {
+  credits: async (movieId: number) => {
     const uri = `${apiBaseUrl}/movie/${movieId}/credits?api_key=${apiKey}&language=${language}`;
     const res = await axios<ICredit>(uri);
     return res.data;

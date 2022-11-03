@@ -1,6 +1,6 @@
 import { DefaultSeoProps } from 'next-seo';
 
-const title = 'THAT MOVIE';
+const title = 'THATMOVIE';
 const description = 'Browse, Find Ratings, Check Actors and Find you next movie to watch';
 
 const SEO: DefaultSeoProps = {

@@ -1,22 +1,22 @@
-import { ReactNode } from 'react';
+import { useRouter } from 'next/router';
+import { Heart, Info } from 'phosphor-react';
 
 import { IMovie } from 'lib/tmdbAPI';
-
-import { MovieCard } from 'components/MovieCard';
-import Heading from 'components/Heading';
-import { Text } from 'components/Text';
-
-import { MovieRating } from 'components/MovieRating';
-
 import { formatDate } from 'utils/dateUtils';
+
+import MovieCard from 'components/MovieCard';
+import Heading from 'components/Heading';
+import Button from 'components/Button';
+import { Text } from 'components/Text';
+import { MovieRating } from 'components/MovieRating';
 
 type MovieHeroProps = {
   movie: IMovie;
-  actions?: ReactNode;
 };
 
-export function MovieHero(props: MovieHeroProps) {
-  const { movie, actions = [] } = props;
+export function MovieHero({ movie }: MovieHeroProps) {
+  const router = useRouter();
+  const queryMovieId = router.query.id;
 
   const ratingPercent = Math.round(movie.vote_average * 10);
   const durationHours = Math.round(movie?.runtime! / 60);
@@ -25,8 +25,8 @@ export function MovieHero(props: MovieHeroProps) {
 
   return (
     <section className="flex flex-col lg:flex-row gap-10">
-      <div className="block">
-        <MovieCard image={movie.poster_path || movie.backdrop_path} />
+      <div className="block h-auto min-w-[250px]">
+        <MovieCard disabledElevation image={movie.poster_path || movie.backdrop_path} alt={movie.title} />
       </div>
 
       <section className="flex flex-col flex-1 gap-10">
@@ -69,7 +69,23 @@ export function MovieHero(props: MovieHeroProps) {
           )}
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6">{actions}</div>
+        <div className="flex flex-col md:flex-row gap-6">
+          <Button aria-label="watch trailer" icon={<Heart weight="bold" />}>
+            Add to Watchlist
+          </Button>
+
+          {/* //* Prevents the navigation button for the movie's detail page from being displayed if the current page is already the detail page. */}
+          {Number(queryMovieId) !== movie.id && (
+            <Button
+              aria-label="more info"
+              icon={<Info weight="bold" />}
+              variant="secondary"
+              onClick={() => router.push(`/movie/${movie.id}`)}
+            >
+              More Info
+            </Button>
+          )}
+        </div>
       </section>
     </section>
   );

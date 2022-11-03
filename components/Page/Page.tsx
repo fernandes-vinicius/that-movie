@@ -9,15 +9,16 @@ type SEOProps = {
 };
 
 const Page = ({ title, description, path, children }: SEOProps) => {
-  const metaSiteUrl = `https://that-movie.vercel.app${path}`;
+  const pageSiteUrl = `https://that-movie.vercel.app${path}`;
+  const pageTitle = title && `${title} | THATMOVIE`;
 
   return (
     <>
       <NextSeo
-        title={title}
+        title={pageTitle}
         description={description}
-        canonical={metaSiteUrl}
-        openGraph={{ url: metaSiteUrl, title }}
+        canonical={pageSiteUrl}
+        openGraph={{ url: pageSiteUrl, title }}
       />
 
       {children}

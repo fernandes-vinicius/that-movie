@@ -1,1 +1,1 @@
-export { CastCard } from './CastCard';
+export { default } from './CastCard';

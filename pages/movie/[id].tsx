@@ -1,10 +1,8 @@
 import { GetServerSideProps, NextPage } from 'next';
-import { Heart } from 'phosphor-react';
 
 import tmdbAPI, { ICredit, IMovie, IMovieImages, ResponseType } from 'lib/tmdbAPI';
 
 import Page from 'components/Page';
-import Button from 'components/Button';
 import Heading from 'components/Heading';
 import { MovieHero } from 'components/MovieHero';
 import { MovieList } from 'components/MovieList';
@@ -23,16 +21,7 @@ const MoviePage: NextPage<MoviePageProps> = (props) => {
 
   return (
     <Page title={movie?.title} description={movie?.overview!} path={`/${movie.id}`}>
-      <MovieHero
-        movie={movie}
-        actions={
-          <>
-            <Button key="add to watchlist" icon={<Heart weight="bold" />}>
-              Add to Watchlist
-            </Button>
-          </>
-        }
-      />
+      <MovieHero movie={movie} />
 
       {/* //* cast */}
       {credits.cast.length > 0 && (

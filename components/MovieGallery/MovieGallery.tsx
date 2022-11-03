@@ -12,9 +12,5 @@ export function MovieGallery({ images }: MovieGalleryProps) {
     thumbnail: `${imagesUrl.small}${img.file_path}`,
   }));
 
-  return (
-    <div className="block w-full">
-      <ImageGallery items={imagesForGallery} />
-    </div>
-  );
+  return <ImageGallery items={imagesForGallery} />;
 }

@@ -17,7 +17,7 @@ function Button(props: ButtonProps) {
       {...rest}
       disabled={disabled || loading}
       className={clsx(
-        'w-auto min-h-10 inline-flex justify-center items-center gap-2 py-2 px-4 rounded transition text-md text-center capitalize font-medium font-sans',
+        'w-auto min-h-10 inline-flex justify-center items-center gap-3 py-2 px-4 rounded transition text-md text-center capitalize font-medium font-sans',
         {
           'bg-primary-main text-white hover:bg-primary-dark': variant === 'primary',
         },

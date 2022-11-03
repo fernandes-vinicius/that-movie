@@ -1,7 +1,7 @@
 import { IMovie } from 'lib/tmdbAPI';
 
 import Link from 'components/Link';
-import { MovieCard } from 'components/MovieCard';
+import MovieCard from 'components/MovieCard';
 
 type MovieListProps = {
   movies: IMovie[];
@@ -13,7 +13,7 @@ export function MovieList({ movies }: MovieListProps) {
       {movies.map((movie) => (
         <li key={movie.id}>
           <Link href={`/movie/${movie.movie_id ?? movie.id}`}>
-            <MovieCard hoverable image={movie.poster_path} />
+            <MovieCard image={movie.poster_path} alt={movie.title} />
           </Link>
         </li>
       ))}
