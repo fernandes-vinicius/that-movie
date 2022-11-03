@@ -1,0 +1,1 @@
+export { MovieHero } from './MovieHero';
