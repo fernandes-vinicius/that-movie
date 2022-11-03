@@ -15,8 +15,7 @@ import { MovieList } from 'components/MovieList';
 const SearchPage: NextPage = () => {
   const [inputValue, setInputValue] = useState('');
 
-  const { data, error } = useSWR(inputValue, tmdbAPI.search);
-  const isLoading = !data && !error && !!inputValue;
+  const { data, isValidating } = useSWR(inputValue, tmdbAPI.search);
 
   return (
     <Page title="Search" description="Find you next movie to watch" path="/search">
@@ -40,7 +39,7 @@ const SearchPage: NextPage = () => {
         </Text>
       </header>
 
-      {isLoading && <Text className="text-gray-300">Loading...</Text>}
+      {isValidating && <Text className="text-gray-300">Loading...</Text>}
 
       {data && <MovieList movies={data} />}
     </Page>
