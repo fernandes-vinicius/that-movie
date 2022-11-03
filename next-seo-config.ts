@@ -10,7 +10,7 @@ const SEO: DefaultSeoProps = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://hat-movie.vercel.app',
+    url: 'https://that-movie.vercel.app',
     images: [
       {
         url: 'https://that-movie.vercel.app/og.png',
