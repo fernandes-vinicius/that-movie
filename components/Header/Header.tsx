@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Heart, MagnifyingGlass, SignIn, SignOut } from 'phosphor-react';
+import { Heart, List, MagnifyingGlass, SignIn, SignOut } from 'phosphor-react';
 import { toast } from 'react-toastify';
 
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
@@ -9,6 +9,7 @@ import Link from 'components/Link';
 import LogoSvg from 'components/LogoSvg';
 import Heading from 'components/Heading';
 import Button from 'components/Button';
+import MenuMobile from 'components/MenuMobile';
 
 function Header() {
   const router = useRouter();
@@ -27,12 +28,12 @@ function Header() {
   };
 
   return (
-    <header className="w-full h-[88px] flex flex-1 justify-between items-center">
+    <header className="w-full min-h-[88px] flex flex-1 justify-between items-center py-4">
       <Link href="/">
         <LogoSvg />
       </Link>
 
-      <section className="flex items-center gap-6 justify-end">
+      <section className="hidden md:flex items-center gap-6 justify-end">
         <Link href="/search">
           <Heading asChild>
             <MagnifyingGlass weight="bold" />
@@ -63,10 +64,15 @@ function Header() {
         {!user && (
           <Link href="/login">
             <Button variant="primary" icon={<SignIn weight="bold" />}>
-              <span className="hidden md:block">Sign In</span>
+              Sign In
             </Button>
           </Link>
         )}
+      </section>
+
+      {/* //* mobile menu */}
+      <section className="block md:hidden">
+        <MenuMobile />
       </section>
     </header>
   );

@@ -18,7 +18,7 @@ export function TextInput(props: TextInputProps) {
       )}
     >
       {icon && (
-        <span className="z-10 h-full flex items-center justify-center leading-snug w-8 ml-4 -mr-4">
+        <span className="h-full flex items-center justify-center leading-snug w-8 ml-4 -mr-4">
           <Slot className="font-bold text-center text-gray-500 text-base w-5 h-5">{icon}</Slot>
         </span>
       )}

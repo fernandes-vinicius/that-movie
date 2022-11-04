@@ -26,7 +26,7 @@ export function MovieHero({ movie }: MovieHeroProps) {
   return (
     <section className="flex flex-col lg:flex-row gap-10">
       <div className="block h-auto min-w-[250px]">
-        <MovieCard disabledElevation image={movie.poster_path || movie.backdrop_path} alt={movie.title} />
+        <MovieCard disabledElevation image={movie.backdrop_path || movie.poster_path} alt={movie.title} />
       </div>
 
       <section className="flex flex-col flex-1 gap-10">
