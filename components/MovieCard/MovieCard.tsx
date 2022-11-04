@@ -17,7 +17,7 @@ function MovieCard(props: MovieCardProps) {
   return (
     <div
       className={clsx('bg-gray-800 relative overflow-hidden rounded-lg shadow-lg', {
-        'hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300': elevation,
+        'hover:border-opacity-80 hover:shadow-2xl transform md:hover:scale-105 transition duration-300': elevation,
       })}
     >
       <Image
