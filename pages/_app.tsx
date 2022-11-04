@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps<{ initialSession: Session }>) 
       <Layout>
         <DefaultSeo {...SEO} />
         <Component {...pageProps} />
-        <ToastContainer theme="dark" position="top-right" />
+        <ToastContainer theme="dark" position="bottom-right" />
       </Layout>
     </SessionContextProvider>
   );

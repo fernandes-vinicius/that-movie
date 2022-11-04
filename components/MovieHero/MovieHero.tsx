@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import { Heart, Info } from 'phosphor-react';
 
+import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
+
 import { IMovie } from 'lib/tmdbAPI';
 import { formatDate } from 'utils/dateUtils';
 
@@ -22,6 +24,33 @@ export function MovieHero({ movie }: MovieHeroProps) {
   const durationHours = Math.round(movie?.runtime! / 60);
   const durationMinutes = Math.round(movie?.runtime! % 60);
   const genrerNames = movie.genres?.map((genrer) => genrer.name).join(', ');
+
+  const user = useUser();
+  const supabaseClient = useSupabaseClient();
+
+  const handleAddToWatchlist = async () => {
+    console.log('handle click');
+
+    if (!user) {
+      return router.push('/login');
+    }
+
+    if (user) {
+      console.log('insert movie');
+
+      const values = {
+        poster_path: movie.poster_path,
+        backdrop_path: movie.backdrop_path,
+        movie_id: movie.id,
+        user_id: user?.id,
+      };
+
+      const { data, error } = await supabaseClient.from('watchlist').insert(values);
+
+      console.log('error', error);
+      console.log('data', data);
+    }
+  };
 
   return (
     <section className="flex flex-col lg:flex-row gap-10">
@@ -70,7 +99,7 @@ export function MovieHero({ movie }: MovieHeroProps) {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6">
-          <Button aria-label="watch trailer" icon={<Heart weight="bold" />}>
+          <Button aria-label="add to watchlist" icon={<Heart weight="bold" />} onClick={handleAddToWatchlist}>
             Add to Watchlist
           </Button>
 
