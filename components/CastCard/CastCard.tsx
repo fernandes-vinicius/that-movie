@@ -16,7 +16,7 @@ function CastCard({ cast }: CastCardProps) {
           src={cast.profile_path ? `${imagesUrl.original}${cast.profile_path}` : '/images/default-cast.svg'}
           alt={cast.name}
           layout="fill"
-          objectFit="cover"
+          // objectFit="cover"
           sizes="100%"
           priority
           placeholder="blur"

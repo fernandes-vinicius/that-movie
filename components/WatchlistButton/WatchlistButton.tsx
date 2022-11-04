@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { Heart } from 'phosphor-react';
 import { toast } from 'react-toastify';
 import useSWR, { useSWRConfig } from 'swr';
@@ -20,6 +21,8 @@ type WatchlistButtonProps = {
 };
 
 function WatchlistButton({ movie }: WatchlistButtonProps) {
+  const router = useRouter();
+
   const user = useUser();
   const supabaseClient = useSupabaseClient();
 
@@ -74,12 +77,14 @@ function WatchlistButton({ movie }: WatchlistButtonProps) {
     }
   };
 
-  if (!user) {
-    return null;
-  }
+  const handleClick = () => {
+    if (!user) router.push('/login');
+    else if (isInWatchList) handleRemove();
+    else handleAdd();
+  };
 
   return (
-    <Button icon={<Heart weight="bold" />} onClick={isInWatchList ? handleRemove : handleAdd} disabled={isValidating}>
+    <Button icon={<Heart weight="bold" />} onClick={handleClick} disabled={isValidating}>
       {isInWatchList ? 'Remove from watchlist' : 'Add to watchlist'}
     </Button>
   );
