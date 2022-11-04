@@ -32,7 +32,7 @@ const MoviePage: NextPage<MoviePageProps> = (props) => {
       )}
 
       {/* //* gallery */}
-      {movieImages && (
+      {movieImages.length > 0 && (
         <>
           <Heading>Gallery</Heading>
           <MovieGallery images={movieImages} />

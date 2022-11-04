@@ -1,7 +1,5 @@
 import { useRouter } from 'next/router';
-import { Heart, Info } from 'phosphor-react';
-
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
+import { Info } from 'phosphor-react';
 
 import { IMovie } from 'lib/tmdbAPI';
 import { formatDate } from 'utils/dateUtils';
@@ -11,6 +9,7 @@ import Heading from 'components/Heading';
 import Button from 'components/Button';
 import { Text } from 'components/Text';
 import { MovieRating } from 'components/MovieRating';
+import WatchlistButton from 'components/WatchlistButton';
 
 type MovieHeroProps = {
   movie: IMovie;
@@ -25,37 +24,10 @@ export function MovieHero({ movie }: MovieHeroProps) {
   const durationMinutes = Math.round(movie?.runtime! % 60);
   const genrerNames = movie.genres?.map((genrer) => genrer.name).join(', ');
 
-  const user = useUser();
-  const supabaseClient = useSupabaseClient();
-
-  const handleAddToWatchlist = async () => {
-    console.log('handle click');
-
-    if (!user) {
-      return router.push('/login');
-    }
-
-    if (user) {
-      console.log('insert movie');
-
-      const values = {
-        poster_path: movie.poster_path,
-        backdrop_path: movie.backdrop_path,
-        movie_id: movie.id,
-        user_id: user?.id,
-      };
-
-      const { data, error } = await supabaseClient.from('watchlist').insert(values);
-
-      console.log('error', error);
-      console.log('data', data);
-    }
-  };
-
   return (
     <section className="flex flex-col lg:flex-row gap-10">
       <div className="block h-auto min-w-[250px]">
-        <MovieCard disabledElevation image={movie.backdrop_path || movie.poster_path} alt={movie.title} />
+        <MovieCard disabledElevation image={movie.poster_path} alt={movie.title} />
       </div>
 
       <section className="flex flex-col flex-1 gap-10">
@@ -99,9 +71,7 @@ export function MovieHero({ movie }: MovieHeroProps) {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6">
-          <Button aria-label="add to watchlist" icon={<Heart weight="bold" />} onClick={handleAddToWatchlist}>
-            Add to Watchlist
-          </Button>
+          <WatchlistButton movie={movie} />
 
           {/* //* Prevents the navigation button for the movie's detail page from being displayed if the current page is already the detail page. */}
           {Number(queryMovieId) !== movie.id && (

@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
-import { GetServerSideProps, NextPage } from 'next';
-import { withPageAuth } from '@supabase/auth-helpers-nextjs';
-import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
+
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 
 import { IMovie } from 'lib/tmdbAPI';
 
@@ -34,17 +33,29 @@ const WatchListPage: NextPage<WatchlistProps> = ({ watchlist }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<WatchlistProps> = withPageAuth({
-  redirectTo: '/login',
-  async getServerSideProps(ctx, supabase) {
-    const { data } = await supabase.from('watchlist').select('*');
+export const getServerSideProps: GetServerSideProps<WatchlistProps> = async (ctx: GetServerSidePropsContext) => {
+  const supabase = createServerSupabaseClient(ctx);
 
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (!session) {
     return {
-      props: {
-        watchlist: data,
+      redirect: {
+        destination: '/login',
+        permanent: false,
       },
     };
-  },
-});
+  }
+
+  const { data } = await supabase.from('watchlist').select('*').eq('user_id', session.user.id);
+
+  return {
+    props: {
+      watchlist: data as IMovie[],
+    },
+  };
+};
 
 export default WatchListPage;
