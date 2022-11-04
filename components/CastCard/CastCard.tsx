@@ -13,12 +13,10 @@ function CastCard({ cast }: CastCardProps) {
     <div className="relative bg-gray-800 h-full rounded-lg overflow-hidden text-center">
       <div className="relative min-h-[300px] rounded-b-0 border-b border-gray-700 overflow-hidden">
         <Image
-          src={cast.profile_path ? `${imagesUrl.small}${cast.profile_path}` : '/images/default-cast.svg'}
+          src={cast.profile_path ? `${imagesUrl.original}${cast.profile_path}` : '/images/default-cast.svg'}
           alt={cast.name}
           layout="fill"
           objectFit="cover"
-          // width={300}
-          // height={400}
           sizes="100%"
           priority
           placeholder="blur"
