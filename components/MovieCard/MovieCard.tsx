@@ -21,7 +21,7 @@ function MovieCard(props: MovieCardProps) {
       })}
     >
       <Image
-        src={image ? `${imagesUrl.medium}${image}` : '/images/default-movie.svg'}
+        src={image ? `${imagesUrl.original}${image}` : '/images/default-movie.svg'}
         alt={alt || 'Poster of the movie'}
         layout="responsive"
         // objectFit="cover"
