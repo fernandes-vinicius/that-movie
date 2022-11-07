@@ -4,6 +4,10 @@
 
 https://that-movie.vercel.app/
 
+# Figma Project
+
+https://www.figma.com/file/OfHQGvLbLtZa2qOmIsKWkm/Project-That-Movie?node-id=0%3A1
+
 Find your next movie or create your watchlist with this App. It include reviews, rating, actors and anything you need to know about the movie.
 
 - This application will help users find their next movie to watch by showing helpful stats
