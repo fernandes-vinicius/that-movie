@@ -11,7 +11,7 @@ const SEO = {
     url: 'https://that-movie.vercel.app',
     images: [
       {
-        url: 'https://that-movie.vercel.app/og.png',
+        url: 'https://raw.githubusercontent.com/fernandes-vinicius/that-movie/main/Thumbnail.png',
         alt: title,
         width: 1280,
         height: 720,
