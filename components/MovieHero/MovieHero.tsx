@@ -32,7 +32,7 @@ function MovieHero({ movie }: MovieHeroProps) {
 
       <section className="flex flex-col flex-1 gap-10">
         <div className="flex items-center">
-          <div className="flex-1">
+          <div className="flex-1 pr-6">
             <Heading size="lg">{movie.title}</Heading>
             {movie.tagline && (
               <Text size="sm" className="inline-block mt-1 text-left text-gray-400">
