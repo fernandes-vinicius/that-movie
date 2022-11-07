@@ -1,4 +1,4 @@
-![Alt text](Thumbnail.png?raw=true 'ThatMovie')
+![Alt text](assets/HomePage.png?raw=true 'ThatMovie')
 
 # That Movie
 
@@ -24,6 +24,7 @@ Find your next movie or create your watchlist with this App. It include reviews,
 
 # Stack
 
+- Typescript
 - Next.JS
 - Tailwind Css
 - Supabase
@@ -38,4 +39,4 @@ Find your next movie or create your watchlist with this App. It include reviews,
 
 ## Screenshots
 
-# TODO
+![Alt text](assets/HomePage.png?raw=true 'Home - ThatMovie')
