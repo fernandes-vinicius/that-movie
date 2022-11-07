@@ -14,8 +14,6 @@ function MovieCard(props: MovieCardProps) {
 
   const elevation = !disabledElevation;
 
-  console.log('image url', `${imagesUrl}${image}`);
-
   return (
     <div
       className={clsx('bg-gray-800 relative overflow-hidden rounded-lg shadow-lg', {
