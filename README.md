@@ -1,4 +1,4 @@
-![Alt text](Thumbnail.png?raw=true 'ThatMovie')
+![Alt text](Thumbnail.jpg?raw=true 'ThatMovie')
 
 # That Movie
 
