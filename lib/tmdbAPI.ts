@@ -46,23 +46,18 @@ export interface ICredit {
 export interface IMovieImages {
   aspect_ratio: number;
   file_path: string;
+  width: number;
   height: number;
   // iso_639_1: string | null;
   // vote_average: number;
   // vote_count: number;
-  width: number;
 }
 
 export const apiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 export const apiBaseUrl = process.env.NEXT_PUBLIC_TMBD_API_BASE_URL;
-export const imagesUrl = {
-  small: `${process.env.NEXT_PUBLIC_TMDB_IMAGES_URL}/w185`,
-  medium: `${process.env.NEXT_PUBLIC_TMDB_IMAGES_URL}/w300`,
-  large: `${process.env.NEXT_PUBLIC_TMDB_IMAGES_URL}/w1280`,
-  original: `${process.env.NEXT_PUBLIC_TMDB_IMAGES_URL}/original`,
-};
+export const imagesUrl = process.env.NEXT_PUBLIC_TMDB_IMAGES_URL;
 
-const language = 'pt-BR'; // TODO - Internationalization (i18n)
+const language = 'en'; // TODO - Internationalization (i18n)
 
 const tmdbAPI = {
   featuredMovie: async () => {

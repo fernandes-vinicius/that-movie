@@ -1,21 +1,19 @@
-import { DefaultSeoProps } from 'next-seo';
-
 const title = 'THATMOVIE';
 const description = 'Browse, Find Ratings, Check Actors and Find you next movie to watch';
 
-const SEO: DefaultSeoProps = {
+const SEO = {
   title,
   description,
   canonical: 'https://that-movie.vercel.app',
   openGraph: {
     type: 'website',
-    locale: 'pt_BR',
+    locale: 'en',
     url: 'https://that-movie.vercel.app',
     images: [
       {
         url: 'https://that-movie.vercel.app/og.png',
         alt: title,
-        width: 12080,
+        width: 1280,
         height: 720,
       },
     ],

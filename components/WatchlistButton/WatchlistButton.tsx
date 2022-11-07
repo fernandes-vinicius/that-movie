@@ -9,7 +9,7 @@ import { IMovie } from 'lib/tmdbAPI';
 
 import Button from 'components/Button';
 
-type AddMovieToWatchlistValues = {
+type AddMovieTowatchlistValues = {
   poster_path: string | null;
   backdrop_path: string | null;
   movie_id: number;
@@ -26,25 +26,25 @@ function WatchlistButton({ movie }: WatchlistButtonProps) {
   const user = useUser();
   const supabaseClient = useSupabaseClient();
 
-  const getWatchlist = async (userId: string) => {
+  const getwatchlist = async (userId: string) => {
     const response = await supabaseClient.from('watchlist').select('*').eq('user_id', userId);
     return response.data as IMovie[];
   };
 
-  const addMovieToWatchList = async (values: AddMovieToWatchlistValues) => {
+  const addMovieTowatchlist = async (values: AddMovieTowatchlistValues) => {
     const response = await supabaseClient.from('watchlist').insert(values);
     return response;
   };
 
-  const removeMovieFromWatchList = async (movieId: number) => {
+  const removeMovieFromwatchlist = async (movieId: number) => {
     const response = await supabaseClient.from('watchlist').delete().eq('movie_id', movieId);
     return response;
   };
 
   const { mutate } = useSWRConfig();
-  const { data: watchList, isValidating } = useSWR(user?.id, getWatchlist, { revalidateOnFocus: false });
+  const { data: watchlist, isValidating } = useSWR(user?.id, getwatchlist, { revalidateOnFocus: false });
 
-  const isInWatchList = !!user && !!watchList?.some((item) => item.movie_id === movie.id);
+  const isInwatchlist = !!user && !!watchlist?.some((item) => item.movie_id === movie.id);
 
   const handleAdd = async () => {
     if (!user) return;
@@ -54,9 +54,9 @@ function WatchlistButton({ movie }: WatchlistButtonProps) {
       backdrop_path: movie.backdrop_path,
       movie_id: movie.id,
       user_id: user.id,
-    } as AddMovieToWatchlistValues;
+    } as AddMovieTowatchlistValues;
 
-    const { error } = await addMovieToWatchList(values);
+    const { error } = await addMovieTowatchlist(values);
 
     if (error) toast.error(error.message);
     else {
@@ -68,7 +68,7 @@ function WatchlistButton({ movie }: WatchlistButtonProps) {
   const handleRemove = async () => {
     if (!user) return;
 
-    const { error } = await removeMovieFromWatchList(movie.id);
+    const { error } = await removeMovieFromwatchlist(movie.id);
 
     if (error) toast.error(error.message);
     else {
@@ -79,13 +79,13 @@ function WatchlistButton({ movie }: WatchlistButtonProps) {
 
   const handleClick = () => {
     if (!user) router.push('/login');
-    else if (isInWatchList) handleRemove();
+    else if (isInwatchlist) handleRemove();
     else handleAdd();
   };
 
   return (
     <Button icon={<Heart weight="bold" />} onClick={handleClick} disabled={isValidating}>
-      {isInWatchList ? 'Remove from watchlist' : 'Add to watchlist'}
+      {isInwatchlist ? 'Remove from watchlist' : 'Add to watchlist'}
     </Button>
   );
 }

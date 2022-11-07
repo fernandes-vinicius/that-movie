@@ -7,7 +7,7 @@ type TextInputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: boolean;
 };
 
-export function TextInput(props: TextInputProps) {
+function TextInput(props: TextInputProps) {
   const { icon, error, ...rest } = props;
 
   return (
@@ -30,3 +30,5 @@ export function TextInput(props: TextInputProps) {
     </div>
   );
 }
+
+export default TextInput;

@@ -6,19 +6,18 @@ import { IMovie } from 'lib/tmdbAPI';
 
 import Page from 'components/Page';
 import Heading from 'components/Heading';
-import { Text } from 'components/Text';
-
-import { MovieList } from 'components/MovieList';
+import Text from 'components/Text';
+import MovieList from 'components/MovieList';
 
 type WatchlistProps = {
   watchlist: IMovie[];
 };
 
-const WatchListPage: NextPage<WatchlistProps> = ({ watchlist }) => {
+const WatchlistPage: NextPage<WatchlistProps> = ({ watchlist }) => {
   return (
-    <Page title="WatchList" description="Remember the movies that touched your heart the most" path="/watchList">
+    <Page title="watchlist" description="Remember the movies that touched your heart the most" path="/watchlist">
       <header className="flex flex-col gap-4">
-        <Heading size="md">WatchList</Heading>
+        <Heading size="md">watchlist</Heading>
 
         <Text asChild size="sm" className="w-full md:max-w-xl text-gray-300">
           <p>
@@ -58,4 +57,4 @@ export const getServerSideProps: GetServerSideProps<WatchlistProps> = async (ctx
   };
 };
 
-export default WatchListPage;
+export default WatchlistPage;

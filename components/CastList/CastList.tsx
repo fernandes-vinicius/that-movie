@@ -46,7 +46,7 @@ const settings: Settings = {
   ],
 };
 
-export function CastList({ cast }: CastListProps) {
+function CastList({ cast }: CastListProps) {
   return (
     <Slider {...settings} className="mx-6">
       {cast.map((item) => (
@@ -57,3 +57,5 @@ export function CastList({ cast }: CastListProps) {
     </Slider>
   );
 }
+
+export default CastList;

@@ -7,7 +7,7 @@ import { SessionContextProvider, Session } from '@supabase/auth-helpers-react';
 
 //* SEO config
 import { DefaultSeo } from 'next-seo';
-import SEO from 'next-seo-config';
+import SEO from 'next-seo.config';
 
 import 'styles/globals.css';
 

@@ -9,7 +9,7 @@ type TextProps = {
   className?: string;
 };
 
-export function Text(props: TextProps) {
+function Text(props: TextProps) {
   const { size = 'md', asChild, className, children, ...rest } = props;
 
   const Comp = asChild ? Slot : 'span';
@@ -31,3 +31,5 @@ export function Text(props: TextProps) {
     </Comp>
   );
 }
+
+export default Text;

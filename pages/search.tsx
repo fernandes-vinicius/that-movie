@@ -7,10 +7,10 @@ import useSWR from 'swr';
 import tmdbAPI from 'lib/tmdbAPI';
 
 import Page from 'components/Page';
-import { TextInput } from 'components/TextInput';
+import TextInput from 'components/TextInput';
 import Heading from 'components/Heading';
-import { Text } from 'components/Text';
-import { MovieList } from 'components/MovieList';
+import Text from 'components/Text';
+import MovieList from 'components/MovieList';
 
 const SearchPage: NextPage = () => {
   const [inputValue, setInputValue] = useState('');

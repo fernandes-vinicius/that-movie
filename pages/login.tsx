@@ -10,8 +10,8 @@ import { isValidEmail } from 'utils/validation';
 import Page from 'components/Page';
 import Container from 'components/Container';
 import Heading from 'components/Heading';
-import { Text } from 'components/Text';
-import { TextInput } from 'components/TextInput';
+import Text from 'components/Text';
+import TextInput from 'components/TextInput';
 import Button from 'components/Button';
 import Link from 'components/Link';
 
@@ -57,8 +57,8 @@ const LoginPage: NextPage = () => {
 
             <Text asChild size="sm" className="text-gray-300">
               <p>
-                Enter your credentials to continue... If you&apos;re new here get a free account and have a Watchlist
-                with your movies.
+                Enter your email address to continue... We will send you an email with a magic link that will be used to
+                log in.
               </p>
             </Text>
           </header>

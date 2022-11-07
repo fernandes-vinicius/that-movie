@@ -1,1 +1,1 @@
-export { MovieGallery } from './MovieGallery';
+export { default } from './MovieGallery';

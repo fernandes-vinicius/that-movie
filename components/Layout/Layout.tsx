@@ -15,7 +15,7 @@ function Layout({ children }: LayoutProps) {
         <Container>
           <div id="back-to-top-anchor" />
           <Header />
-          <main className="relative w-full h-full pt-4 md:pt-10 pb-10 flex flex-col gap-10">{children}</main>
+          <main className="relative w-full h-full pt-4 md:pt-10 pb-40 flex flex-col gap-10">{children}</main>
         </Container>
       </div>
 

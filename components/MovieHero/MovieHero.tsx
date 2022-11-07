@@ -7,15 +7,15 @@ import { formatDate } from 'utils/dateUtils';
 import MovieCard from 'components/MovieCard';
 import Heading from 'components/Heading';
 import Button from 'components/Button';
-import { Text } from 'components/Text';
-import { MovieRating } from 'components/MovieRating';
+import Text from 'components/Text';
+import MovieRating from 'components/MovieRating';
 import WatchlistButton from 'components/WatchlistButton';
 
 type MovieHeroProps = {
   movie: IMovie;
 };
 
-export function MovieHero({ movie }: MovieHeroProps) {
+function MovieHero({ movie }: MovieHeroProps) {
   const router = useRouter();
   const queryMovieId = router.query.id;
 
@@ -41,7 +41,7 @@ export function MovieHero({ movie }: MovieHeroProps) {
             )}
           </div>
 
-          <MovieRating value={movie.vote_average} />
+          <MovieRating rating={movie.vote_average} />
         </div>
 
         {movie.overview && (
@@ -77,8 +77,8 @@ export function MovieHero({ movie }: MovieHeroProps) {
           {Number(queryMovieId) !== movie.id && (
             <Button
               aria-label="more info"
-              icon={<Info weight="bold" />}
               variant="secondary"
+              icon={<Info weight="bold" />}
               onClick={() => router.push(`/movie/${movie.id}`)}
             >
               More Info
@@ -89,3 +89,5 @@ export function MovieHero({ movie }: MovieHeroProps) {
     </section>
   );
 }
+
+export default MovieHero;

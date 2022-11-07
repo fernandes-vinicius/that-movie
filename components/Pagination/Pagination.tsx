@@ -8,9 +8,9 @@ type PaginationProps = {
   onPageChange: (page: number) => void;
 };
 
-const LIMIT_PAGES = 500; //! Fix page break over 500. service returns error 422 from page 500, 501, 502, ...
+const LIMIT_PAGES = 500; //! Fix page break over 500. service returns error 422 from page > 500, 501, 502, 503, 504, ...
 
-export function Pagination(props: PaginationProps) {
+function Pagination(props: PaginationProps) {
   const { currentPage, onPageChange } = props;
 
   const handlePageChange = (activePage: number) => {
@@ -35,8 +35,8 @@ export function Pagination(props: PaginationProps) {
       nextLabel={NextButton}
       breakLabel={<DotsThree weight="bold" size={20} />}
       pageCount={LIMIT_PAGES}
-      marginPagesDisplayed={2}
-      pageRangeDisplayed={5}
+      marginPagesDisplayed={1}
+      pageRangeDisplayed={1}
       onPageChange={({ selected: activePage }) => handlePageChange(activePage)}
       disableInitialCallback={true}
       // initialPage={currentPage - 1}
@@ -44,7 +44,9 @@ export function Pagination(props: PaginationProps) {
       containerClassName="flex justify-center items-center p-0 gap-8 text-gray-400"
       breakClassName="text-md text-center font-sans transtition hover:text-white"
       pageClassName="text-md text-center font-sans transtition hover:text-white"
-      activeClassName="text-gray-50 font-semibold"
+      activeClassName="text-gray-50 font-medium"
     />
   );
 }
+
+export default Pagination;

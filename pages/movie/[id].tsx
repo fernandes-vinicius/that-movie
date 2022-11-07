@@ -4,10 +4,10 @@ import tmdbAPI, { ICredit, IMovie, IMovieImages, ResponseType } from 'lib/tmdbAP
 
 import Page from 'components/Page';
 import Heading from 'components/Heading';
-import { MovieHero } from 'components/MovieHero';
-import { MovieList } from 'components/MovieList';
-import { CastList } from 'components/CastList';
-import { MovieGallery } from 'components/MovieGallery';
+import MovieHero from 'components/MovieHero';
+import MovieList from 'components/MovieList';
+import CastList from 'components/CastList';
+import MovieGallery from 'components/MovieGallery';
 
 type MoviePageProps = {
   movie: IMovie;

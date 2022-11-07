@@ -7,11 +7,11 @@ type MovieListProps = {
   movies: IMovie[];
 };
 
-export function MovieList({ movies }: MovieListProps) {
+function MovieList({ movies }: MovieListProps) {
   return (
     <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       {movies.map((movie) => (
-        <li key={movie.id}>
+        <li key={movie.id} title={movie.title}>
           <Link href={`/movie/${movie.movie_id ?? movie.id}`}>
             <MovieCard image={movie.poster_path} alt={movie.title} />
           </Link>
@@ -20,3 +20,5 @@ export function MovieList({ movies }: MovieListProps) {
     </ul>
   );
 }
+
+export default MovieList;

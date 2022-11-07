@@ -18,15 +18,9 @@ function Button(props: ButtonProps) {
       disabled={disabled || loading}
       className={clsx(
         'w-auto min-h-10 inline-flex justify-center items-center gap-3 py-2 px-3 rounded transition text-md text-center capitalize font-medium font-sans',
-        {
-          'bg-primary-main text-white hover:bg-primary-dark': variant === 'primary',
-        },
-        {
-          'bg-white text-black hover:bg-gray-200': variant === 'secondary',
-        },
-        {
-          'bg-gray-700 text-gray-400 hover:bg-gray-700': disabled || loading,
-        },
+        { 'bg-primary-main text-white hover:bg-primary-dark': variant === 'primary' },
+        { 'bg-white text-black hover:bg-gray-200': variant === 'secondary' },
+        { 'bg-gray-700 text-gray-400 hover:bg-gray-700': disabled || loading },
         className
       )}
     >

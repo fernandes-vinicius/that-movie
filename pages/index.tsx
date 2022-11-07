@@ -5,9 +5,9 @@ import tmdbAPI, { ResponseType, IMovie } from 'lib/tmdbAPI';
 
 import Page from 'components/Page';
 import Heading from 'components/Heading';
-import { MovieHero } from 'components/MovieHero';
-import { MovieList } from 'components/MovieList';
-import { Pagination } from 'components/Pagination';
+import MovieHero from 'components/MovieHero';
+import MovieList from 'components/MovieList';
+import Pagination from 'components/Pagination';
 
 type HomePageProps = {
   featuredMovie: IMovie;

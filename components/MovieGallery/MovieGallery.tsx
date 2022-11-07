@@ -6,11 +6,13 @@ type MovieGalleryProps = {
   images: IMovieImages[];
 };
 
-export function MovieGallery({ images }: MovieGalleryProps) {
+function MovieGallery({ images }: MovieGalleryProps) {
   const imagesForGallery: ReactImageGalleryItem[] = images.map((img) => ({
-    original: `${imagesUrl.original}${img.file_path}`,
-    thumbnail: `${imagesUrl.small}${img.file_path}`,
+    original: `${imagesUrl}${img.file_path}`,
+    thumbnail: `${imagesUrl}${img.file_path}`,
   }));
 
-  return <ImageGallery items={imagesForGallery} />;
+  return <ImageGallery items={imagesForGallery} additionalClass="bg-gray-800 p-2 overflow-hidden rounded" />;
 }
+
+export default MovieGallery;
