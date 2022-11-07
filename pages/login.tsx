@@ -1,6 +1,5 @@
 import { FormEvent, useState } from 'react';
 import { NextPage } from 'next';
-import * as _ from 'radash';
 import { ArrowLeft, EnvelopeSimple } from 'phosphor-react';
 import { toast } from 'react-toastify';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';

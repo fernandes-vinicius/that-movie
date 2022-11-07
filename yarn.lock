@@ -1928,11 +1928,6 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-radash@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/radash/-/radash-8.1.0.tgz#59f0fc1b3ef3ec4287ff798cee185c1d5e1dbf59"
-  integrity sha512-EdJKPuK92EwDzUTWHf9+Xh+7IeU0jNBiu0BLHEPEbczLcaVjcPj+JYDsU3JYHbs50I+BRMFOugxQTKgISClh9w==
-
 react-debounce-input@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/react-debounce-input/-/react-debounce-input-3.3.0.tgz#85e3ebcaa41f2016e50613134a1ec9fe3cdb422e"
