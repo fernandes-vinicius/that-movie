@@ -4,7 +4,7 @@
 
 https://that-movie.vercel.app/
 
-# Figma Project
+## Figma Project
 
 https://www.figma.com/file/OfHQGvLbLtZa2qOmIsKWkm/Project-That-Movie?node-id=0%3A1
 
@@ -26,7 +26,7 @@ Find your next movie or create your watchlist with this App. It include reviews,
 - [x] User can create their own watch list
 - [x] User can review movies
 
-# Stack
+## Stack
 
 - Typescript
 - Next.JS
