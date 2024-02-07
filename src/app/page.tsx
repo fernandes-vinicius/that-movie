@@ -1,3 +1,5 @@
+import { Button } from '@/_components/ui/button'
+
 export default function Home() {
-  return <main>Hello World!</main>
+  return <Button>Hello World!</Button>
 }
