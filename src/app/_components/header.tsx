@@ -5,15 +5,13 @@ import { HomeIcon, SearchIcon } from 'lucide-react'
 
 import { LogoSvg } from '@/_components/logo-svg'
 import { Button } from '@/_components/ui/button'
-import { Separator } from '@/_components/ui/separator'
-
-const githubUrl = 'https://github.com/fernandes-vinicius/that-movie-lab'
+import { env } from '@/_lib/env'
 
 export function Header() {
   return (
     <header className="grid grid-cols-2 grid-rows-[100px] items-center gap-5">
       <div>
-        <Link href="/" aria-label="Back to home" className="inline-block">
+        <Link href="/" aria-label="Back to home">
           <LogoSvg />
         </Link>
       </div>
@@ -31,17 +29,17 @@ export function Header() {
           </Link>
         </Button>
 
-        <Separator orientation="vertical" className="mx-3 min-h-5" />
+        <hr className="mx-2 min-h-5 w-[1px] shrink-0 border-0 bg-neutral-800" />
 
         <Link
-          href={githubUrl}
+          href={env.NEXT_PUBLIC_GITHUB_REPO_URL}
           target="_blank"
           rel="noreferrer"
-          aria-label="Go to github"
+          aria-label="Go to GitHub page"
         >
           <Image
             src="/github.svg"
-            alt="Github"
+            alt="GitHub"
             height={20}
             width={20}
             className="ml-2 object-contain"

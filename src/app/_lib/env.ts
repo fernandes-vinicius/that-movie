@@ -14,7 +14,11 @@ export const env = createEnv({
    *
    * 💡 You'll get type errors if these are not prefixed with NEXT_PUBLIC_.
    */
-  client: {},
+  client: {
+    NEXT_PUBLIC_TMDB_API_BASE_URL: z.string().min(1),
+    NEXT_PUBLIC_TMDB_API_LANGUAGE: z.string().min(1),
+    NEXT_PUBLIC_GITHUB_REPO_URL: z.string().min(1),
+  },
   /*
    * Due to how Next.js bundles environment variables on Edge and Client,
    * we need to manually destructure them to make sure all are included in bundle.
@@ -23,5 +27,9 @@ export const env = createEnv({
    */
   runtimeEnv: {
     TMDB_API_KEY: process.env.TMDB_API_KEY,
+
+    NEXT_PUBLIC_TMDB_API_BASE_URL: process.env.NEXT_PUBLIC_TMDB_API_BASE_URL,
+    NEXT_PUBLIC_TMDB_API_LANGUAGE: process.env.NEXT_PUBLIC_TMDB_API_LANGUAGE,
+    NEXT_PUBLIC_GITHUB_REPO_URL: process.env.NEXT_PUBLIC_GITHUB_REPO_URL,
   },
 })

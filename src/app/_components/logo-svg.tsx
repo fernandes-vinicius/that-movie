@@ -8,8 +8,9 @@ export function LogoSvg(props: React.SVGProps<SVGSVGElement>) {
       {...props}
     >
       <path
-        fill="#fff"
+        fill="currentColor"
         d="M13.608 9.152v3.288H9.144V26H5.04V12.44H.576V9.152h13.032Zm16.652 0V26h-4.104v-6.936h-6.384V26h-4.104V9.152h4.104v6.6h6.384v-6.6h4.104Zm13.45 13.872h-6.288L36.414 26h-4.296l6.096-16.848h4.752L49.062 26h-4.344l-1.008-2.976Zm-1.056-3.168-2.088-6.168-2.064 6.168h4.152ZM63.038 9.152v3.288h-4.464V26H54.47V12.44h-4.464V9.152h13.032Z"
+        className="text-neutral-50"
       />
       <path
         fill="#E50914"
