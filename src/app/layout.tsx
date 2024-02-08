@@ -2,6 +2,7 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 
+import { Header } from '@/_components/header'
 import { fontSans } from '@/_lib/fonts'
 import { ThemeProvider } from '@/_providers/theme-provider'
 
@@ -15,14 +16,17 @@ type Props = Readonly<{ children: React.ReactNode }>
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans.variable} dark`}>
+      <body className={fontSans.variable}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <div className="container flex h-full flex-col overflow-x-hidden">
+            <Header />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

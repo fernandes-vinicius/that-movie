@@ -1,5 +1,59 @@
-import { Button } from '@/_components/ui/button'
-
 export default function Home() {
-  return <Button>Hello World!</Button>
+  return (
+    <main>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home</p>
+      <p>Home end</p>
+    </main>
+  )
 }
