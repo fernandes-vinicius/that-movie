@@ -10,7 +10,7 @@ type Params = {
 
 export function buildURL(path: string, params?: Params) {
   const page = params?.page || 1
-  return `${BASE_URL}${path}?api_key=${API_KEY}&language=${LANGUAGE}&page=${page}`
+  return `${BASE_URL}${path}?api_key=${API_KEY}&language=${LANGUAGE}&page=${page}&append_to_response=images,credits,genres`
 }
 
 export function buildImageUrl(path: string, width = 500) {

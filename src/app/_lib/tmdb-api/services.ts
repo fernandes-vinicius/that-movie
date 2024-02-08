@@ -59,3 +59,23 @@ export async function getNowPlaying(page: number) {
     return null
   }
 }
+
+export async function getMovie(movieId: string) {
+  try {
+    const url = buildURL(`/movie/${movieId}`)
+
+    const response = await fetch(url, {
+      headers: {
+        accept: 'application/json',
+      },
+    })
+
+    const data = await response.json()
+
+    // Assuming top_rated will return at least one movie
+    return data as Movie
+  } catch (error) {
+    console.error('Error fetching movie:', error)
+    return null
+  }
+}

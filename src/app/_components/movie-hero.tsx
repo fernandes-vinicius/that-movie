@@ -18,7 +18,7 @@ interface Props {
 export async function MovieHero({ movie }: Props) {
   const genres = await getGenres()
 
-  const movieGenres = movie.genre_ids.reduce((acc: string[], genreId) => {
+  const movieGenres = movie?.genre_ids?.reduce((acc: string[], genreId) => {
     const genre = genres?.find((genre) => genre.id === genreId)
     if (genre) {
       acc.push(genre.name)
@@ -26,12 +26,12 @@ export async function MovieHero({ movie }: Props) {
     return acc
   }, [])
 
-  const genderNames = movieGenres.join(', ')
+  const genderNames = movieGenres?.join(', ')
   const posterUrl = buildImageUrl(movie.poster_path)
   const ratingPercent = Math.round(movie.vote_average * 10)
 
   return (
-    <section id="movie" className="grid gap-10 md:grid-cols-[300px_1fr]">
+    <section id="movie-hero" className="grid gap-10 md:grid-cols-[300px_1fr]">
       <MovieImage src={posterUrl} alt={movie.title} />
 
       <div className="flex flex-col gap-10">
