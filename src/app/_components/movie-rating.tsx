@@ -11,7 +11,7 @@ interface Props {
 export function MovieRating({ rating = 0 }: Props) {
   return (
     <div className="flex items-center gap-2">
-      <StarIcon className="size-5 text-orange-400" />
+      <StarIcon className="size-5 fill-current text-amber-400" />
       <span className="text-xl font-medium leading-none">
         <CountUp end={rating} decimals={1} />
       </span>
