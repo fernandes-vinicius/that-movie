@@ -52,7 +52,6 @@ export async function getNowPlaying(page: number) {
 
     const data = await response.json()
 
-    // Assuming top_rated will return at least one movie
     return data as ApiResponse<Movie>
   } catch (error) {
     console.error('Error fetching now playing movies:', error)
@@ -72,8 +71,26 @@ export async function getMovie(movieId: string) {
 
     const data = await response.json()
 
-    // Assuming top_rated will return at least one movie
     return data as Movie
+  } catch (error) {
+    console.error('Error fetching movie:', error)
+    return null
+  }
+}
+
+export async function searchMovie(query: string) {
+  try {
+    const url = buildURL(`/search/multi`, { query })
+
+    const response = await fetch(url, {
+      headers: {
+        accept: 'application/json',
+      },
+    })
+
+    const data = await response.json()
+
+    return data as ApiResponse<Movie>
   } catch (error) {
     console.error('Error fetching movie:', error)
     return null

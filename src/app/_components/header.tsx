@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="grid grid-cols-2 grid-rows-[100px] items-center gap-5">
       <div>
-        <Link href="/" aria-label="Back to home">
+        <Link href="/" aria-label="Back to home" className="outline-none">
           <LogoSvg />
         </Link>
       </div>
@@ -24,7 +24,7 @@ export function Header() {
         </Button>
 
         <Button asChild aria-label="Go to search" size="icon" variant="ghost">
-          <Link href="/">
+          <Link href="/search">
             <SearchIcon className="size-5" />
           </Link>
         </Button>
@@ -36,6 +36,7 @@ export function Header() {
           target="_blank"
           rel="noreferrer"
           aria-label="Go to GitHub page"
+          className="outline-none"
         >
           <Image
             src="/github.svg"

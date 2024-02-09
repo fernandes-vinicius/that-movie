@@ -2,7 +2,6 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 
-import { Footer } from '@/_components/footer'
 import { Header } from '@/_components/header'
 import { fontSans } from '@/_lib/fonts'
 import { SEO } from '@/_lib/seo'
@@ -22,10 +21,9 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="pt-BR">
       <body className={cn(fontSans.variable, 'dark')}>
-        <div className="container flex h-full flex-col overflow-x-hidden">
+        <div className="container flex h-full flex-col overflow-x-hidden pb-14">
           <Header />
           {children}
-          <Footer />
         </div>
       </body>
     </html>

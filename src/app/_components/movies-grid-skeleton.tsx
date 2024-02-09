@@ -1,4 +1,5 @@
 import { Skeleton } from '@/_components/ui/skeleton'
+import { randomUUID } from 'crypto'
 
 export function MoviesGridSkeleton() {
   return (
