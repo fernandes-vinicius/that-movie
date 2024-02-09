@@ -4,10 +4,10 @@ import React from 'react'
 
 type Props = ImageProps
 
-export function MovieImage({ src, alt }: Props) {
+export function MovieImage({ alt, ...props }: Props) {
   return (
     <Image
-      src={src}
+      {...props}
       alt={alt}
       priority
       quality={100}

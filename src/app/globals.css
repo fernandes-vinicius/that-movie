@@ -7,3 +7,9 @@
     @apply bg-neutral-950 font-sans text-neutral-50 antialiased;
   }
 }
+
+@layer utilities {
+  .movie-grid {
+    @apply grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6;
+  }
+}

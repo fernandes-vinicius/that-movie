@@ -42,7 +42,7 @@ export function Header() {
             alt="GitHub"
             height={20}
             width={20}
-            className="ml-2 object-contain"
+            className="ml-2 size-5 object-contain"
           />
         </Link>
       </div>

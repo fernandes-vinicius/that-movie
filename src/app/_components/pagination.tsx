@@ -48,7 +48,7 @@ export function Pagination({ currentPage = 1, totalPages = 1 }: Props) {
       <Button
         variant="outline"
         size="icon"
-        aria-label="Prev"
+        aria-label="Prev page"
         onClick={handlePrevPage}
         disabled={page === 1}
       >
@@ -58,7 +58,7 @@ export function Pagination({ currentPage = 1, totalPages = 1 }: Props) {
       <Button
         variant="outline"
         size="icon"
-        aria-label="Next"
+        aria-label="Next page"
         onClick={handleNextPage}
         disabled={page === totalPages}
       >

@@ -14,7 +14,7 @@ export async function NowPlayingList({ currentPage }: Props) {
 
   return (
     <div className="space-y-10">
-      <ul className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+      <ul className="movie-grid">
         {nowPlaying?.results.map((movie) => {
           const imageUrl = buildImageUrl(movie.poster_path)
 

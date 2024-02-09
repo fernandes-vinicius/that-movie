@@ -12,7 +12,7 @@ export interface Movie {
   original_title: string
   overview: string
   popularity: number
-  poster_path: '/35Uef7fz9ctYbJLXbJBCqvtttEQ.jpg'
+  poster_path: string
   release_date: string
   title: string
   vote_average: number
