@@ -4,16 +4,14 @@ import Image, { type ImageProps } from 'next/image'
 
 import React, { useState } from 'react'
 
-type Props = ImageProps
-
-export function MovieImage({ src, alt, ...props }: Props) {
+export function MovieImage({ src, alt, ...props }: ImageProps) {
   const [imageSrc, setImageSrc] = useState(src)
 
   return (
     <Image
       {...props}
       src={imageSrc}
-      alt={alt || 'Imagem do filme'}
+      alt={alt || 'Poster do filme'}
       priority
       quality={100}
       width={300}

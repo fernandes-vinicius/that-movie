@@ -21,13 +21,15 @@ export function SearchInput() {
     setInputValue(query || '')
   }, [searchParams])
 
-  const handleSearch = useDebouncedCallback((value) => {
-    setInputValue(value)
+  const handleSearch = useDebouncedCallback((value: string) => {
+    const term = value.trimStart()
+
+    setInputValue(term)
 
     const params = new URLSearchParams(searchParams)
 
-    if (value) {
-      params.set('q', value)
+    if (term) {
+      params.set('q', term)
     } else {
       params.delete('q')
     }
@@ -36,12 +38,14 @@ export function SearchInput() {
   }, 1000 /* delay in ms */)
 
   return (
-    <form onSubmit={handleSearch}>
+    <form>
       <Input
         name="q"
         type="text"
         aria-label="Search movie"
-        placeholder="Busque filmes por title, gênero..."
+        autoFocus
+        autoComplete="off"
+        placeholder="Busque filmes por título, gênero..."
         defaultValue={inputValue}
         onChange={(e) => handleSearch(e.target.value)}
         className="h-12"

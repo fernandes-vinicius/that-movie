@@ -17,13 +17,13 @@ export async function FeaturedMovie() {
     <MovieHero
       movie={featuredMovie}
       action={
-        <Button asChild type="button" size="lg" className="w-full sm:w-fit">
+        <Button asChild type="button" size="lg">
           <Link
             href={`/movie/${featuredMovie.id}`}
             aria-label={featuredMovie.title}
           >
             <InfoIcon className="size-4" />
-            Saiba mais
+            <span>Saiba mais</span>
           </Link>
         </Button>
       }

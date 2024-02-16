@@ -1,17 +1,12 @@
-import Link from 'next/link'
-
-import { InfoIcon } from 'lucide-react'
-
 import { MovieImage } from '@/_components/movie-image'
 import { MovieRating } from '@/_components/movie-rating'
-import { Button } from '@/_components/ui/button'
 import type { Movie } from '@/_lib/tmdb-api/types'
 import { buildImageUrl } from '@/_lib/tmdb-api/utils'
 import { formatDate } from '@/_lib/utils'
 
 interface Props {
   movie: Movie
-  action?: React.ReactNode
+  action?: React.ReactNode | null
 }
 
 export async function MovieHero({ movie, action }: Props) {
@@ -46,7 +41,7 @@ export async function MovieHero({ movie, action }: Props) {
           )}
         </div>
 
-        {action && action}
+        {action && <div className="grid sm:block">{action}</div>}
       </div>
     </section>
   )

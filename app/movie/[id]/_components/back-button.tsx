@@ -17,11 +17,11 @@ export function BackButton() {
     <Button
       title="Voltar"
       aria-label="Go back"
-      size="icon"
       variant="secondary"
       onClick={handleBack}
     >
       <ArrowLeftIcon className="size-4" />
+      <span>Voltar</span>
     </Button>
   )
 }

@@ -8,29 +8,30 @@ interface Props {
   query: string
 }
 
-export async function SearchedMovies({ query }: Props) {
-  const searchedMovies = await searchMovie(query)
+export async function FoundMovies({ query }: Props) {
+  const movies = await searchMovie(query)
 
-  if (!searchedMovies?.results) {
+  if (!movies?.results) {
     return null
   }
 
-  if (searchedMovies.results.length === 0) {
+  if (movies.results.length === 0) {
     return (
-      <p className="my-4 text-center">
-        Não conseguimos encontrar nada sobre <strong>{`"${query}"`}</strong>
+      <p className="my-4 w-full text-center sm:mx-auto sm:max-w-md">
+        Não conseguimos encontrar nada em nosso catálogo sobre{' '}
+        <strong>{`"${query}"`}</strong>
       </p>
     )
   }
 
   return (
     <ul className="movie-grid">
-      {searchedMovies.results.map((movie) => {
+      {movies.results.map((movie) => {
         const imageUrl = buildImageUrl(movie.poster_path)
 
         return (
-          <li key={movie.id}>
-            <Link href={`/movie/${movie.id}`} aria-label="Go to movie">
+          <li key={movie.id} className="transition-transform sm:hover:scale-95">
+            <Link href={`/movie/${movie.id}`} aria-label="Go to movie details">
               <MovieImage src={imageUrl} alt={movie.title} />
             </Link>
           </li>

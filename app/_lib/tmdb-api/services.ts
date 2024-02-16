@@ -1,4 +1,4 @@
-import type { ApiResponse, Genre, Movie } from './types'
+import type { ApiPaginationResponse, Genre, Movie } from './types'
 import { buildURL } from './utils'
 
 export async function getFeaturedMovie() {
@@ -52,7 +52,7 @@ export async function getNowPlaying(page: number) {
 
     const data = await response.json()
 
-    return data as ApiResponse<Movie>
+    return data as ApiPaginationResponse<Movie>
   } catch (error) {
     console.error('Error fetching now playing movies:', error)
     return null
@@ -90,9 +90,9 @@ export async function searchMovie(query: string) {
 
     const data = await response.json()
 
-    return data as ApiResponse<Movie>
+    return data as ApiPaginationResponse<Movie>
   } catch (error) {
-    console.error('Error fetching movie:', error)
+    console.error('Error fetching search results:', error)
     return null
   }
 }

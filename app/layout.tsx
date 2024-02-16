@@ -5,7 +5,6 @@ import type { Metadata } from 'next'
 import { Header } from '@/_components/header'
 import { fontSans } from '@/_lib/fonts'
 import { SEO } from '@/_lib/seo'
-import { cn } from '@/_lib/utils'
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +19,7 @@ type Props = Readonly<{ children: React.ReactNode }>
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="pt-BR">
-      <body className={cn(fontSans.variable, 'dark')}>
+      <body className={fontSans.variable}>
         <div className="container flex h-full flex-col overflow-x-hidden pb-14">
           <Header />
           {children}

@@ -16,17 +16,15 @@ export async function NowPlayingList({ currentPage }: Props) {
     <div className="space-y-10">
       <ul className="movie-grid">
         {nowPlaying?.results.map((movie) => {
+          const key = movie.id
           const imageUrl = buildImageUrl(movie.poster_path)
 
           return (
-            <li
-              key={movie.id}
-              className="transition-transform sm:hover:scale-95"
-            >
+            <li key={key} className="transition-transform sm:hover:scale-95">
               <Link
-                href={`/movie/${movie.id}`}
-                aria-label={movie.title}
                 title={movie.title}
+                aria-label={movie.title}
+                href={`/movie/${movie.id}`}
               >
                 <MovieImage src={imageUrl} alt={movie.title} />
               </Link>

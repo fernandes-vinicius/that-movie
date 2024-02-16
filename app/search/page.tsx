@@ -2,8 +2,8 @@ import React from 'react'
 
 import { MoviesGridSkeleton } from '@/_components/movies-grid-skeleton'
 
+import { FoundMovies } from './_compoenents/found-movies'
 import { SearchInput } from './_compoenents/search-input'
-import { SearchedMovies } from './_compoenents/searched-movies'
 
 interface Props {
   searchParams: {
@@ -35,7 +35,7 @@ export default async function SearchPage({ searchParams }: Props) {
 
       {query && (
         <React.Suspense key={query} fallback={<MoviesGridSkeleton />}>
-          <SearchedMovies query={query} />
+          <FoundMovies query={query} />
         </React.Suspense>
       )}
     </main>
