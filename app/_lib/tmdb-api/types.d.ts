@@ -3,6 +3,15 @@ export interface Genre {
   name: string
 }
 
+export interface Cast {
+  id: number
+  name: string
+  profile_path: string
+  cast_id: number
+  character: string
+  credit_id: string
+}
+
 export interface Movie {
   // adult: boolean,
   budget: number
@@ -17,14 +26,7 @@ export interface Movie {
   vote_average: number
   vote_count: number
   credits?: {
-    cast: {
-      id: number
-      name: string
-      profile_path: string
-      cast_id: number
-      character: string
-      credit_id: string
-    }[]
+    cast: Cast[]
   }
 }
 

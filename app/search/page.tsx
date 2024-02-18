@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import React from 'react'
 
 import { MoviesGridSkeleton } from '@/_components/movies-grid-skeleton'
@@ -8,6 +10,24 @@ import { SearchInput } from './_compoenents/search-input'
 interface Props {
   searchParams: {
     q?: string
+  }
+}
+
+export async function generateMetadata({
+  searchParams,
+}: Props): Promise<Metadata> {
+  // read route params
+  const query = searchParams.q
+
+  if (!query) {
+    return {}
+  }
+
+  return {
+    title: `Procurando por ${query}`,
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
   }
 }
 

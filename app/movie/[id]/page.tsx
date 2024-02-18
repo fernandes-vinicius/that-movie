@@ -1,16 +1,36 @@
-import Image from 'next/image'
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import React from 'react'
+
 import { MovieHero } from '@/_components/movie-hero'
+import { MoviesGridSkeleton } from '@/_components/movies-grid-skeleton'
 import { getMovie } from '@/_lib/tmdb-api/services'
-import { buildImageUrl } from '@/_lib/tmdb-api/utils'
 import { currencyFormat } from '@/_lib/utils'
 
 import { BackButton } from './_components/back-button'
+import { MainCast } from './_components/main-cast'
+import { Recommendations } from './_components/recommendations'
 
 interface Props {
   params: {
     id: string
+  }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const id = params.id
+
+  // fetch data
+  const movie = await getMovie(id)
+
+  if (!movie) {
+    return {}
+  }
+
+  return {
+    title: movie?.title,
   }
 }
 
@@ -63,27 +83,17 @@ export default async function MoviePage({ params }: Props) {
         <h3 className="text-xl font-medium">Elenco principal</h3>
 
         {mainCast && (
-          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {mainCast.map((cast) => (
-              <li key={cast.id} className="flex flex-col gap-2 overflow-hidden">
-                <Image
-                  src={buildImageUrl(cast.profile_path)}
-                  alt={cast.name}
-                  width={200}
-                  height={300}
-                  className="w-full rounded-md object-cover"
-                />
-
-                <div className="flex flex-col truncate">
-                  <span className="truncate font-medium">{cast.name}</span>
-                  <span className="truncate text-sm leading-none text-neutral-400">
-                    {cast.character}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <div className="relative w-full max-w-full px-12">
+            <MainCast cast={mainCast} />
+          </div>
         )}
+      </section>
+
+      <section id="recommendations" className="flex flex-col gap-10">
+        <h3 className="text-xl font-medium">Recomendações</h3>
+        <React.Suspense fallback={<MoviesGridSkeleton />}>
+          <Recommendations movieId={movie.id} />
+        </React.Suspense>
       </section>
     </main>
   )

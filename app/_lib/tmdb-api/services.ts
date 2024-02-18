@@ -96,3 +96,22 @@ export async function searchMovie(query: string) {
     return null
   }
 }
+
+export async function getRecommendations(movieId: number) {
+  try {
+    const url = buildURL(`/movie/${movieId}/recommendations`)
+
+    const response = await fetch(url, {
+      headers: {
+        accept: 'application/json',
+      },
+    })
+
+    const data = await response.json()
+
+    return data as ApiPaginationResponse<Movie>
+  } catch (error) {
+    console.error('Error fetching recommendations:', error)
+    return null
+  }
+}
