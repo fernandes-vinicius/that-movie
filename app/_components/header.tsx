@@ -1,4 +1,6 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
+
+// import Image from 'next/image'
 import Link from 'next/link'
 
 import { HomeIcon, SearchIcon } from 'lucide-react'
@@ -35,7 +37,7 @@ export function Header() {
           rel="noreferrer"
           aria-label="Go to GitHub page"
         >
-          <Image
+          <img
             src="/github.svg"
             alt="GitHub"
             height={20}
