@@ -20,6 +20,10 @@ Ela consome dados da API pública do TMDB para fornecer aos usuários informaç�
 
 🔗 <a href="https://that-movie.vercel.app" target="_blank">that-movie.vercel.app</a>
 
+## ✨ Protótipo
+
+🔗 <a href="https://www.figma.com/proto/OfHQGvLbLtZa2qOmIsKWkm/Project-That-Movie?type=design&node-id=1-41&t=3sXOtCApI6DIEyvW-1&scaling=min-zoom&page-id=1%3A40&starting-point-node-id=1%3A41&mode=design" target="_blank">Figma</a>
+
 ## 🛠 Tecnologias Utilizadas
 
 As seguintes tecnologias foram utlizadas na construção deste projeto:
