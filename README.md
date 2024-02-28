@@ -7,35 +7,30 @@
 ## 📘 Descrição
 
 Navegue e encontre seu próximo filme para assistir. O That Movie é uma aplicação de catálogo de filmes construída com Next.js, React, TypeScript e Tailwind CSS. 
-Ela consome dados da API pública do TMDB para fornecer aos usuários informações sobre diversos filmes. A aplicação oferece uma interface visualmente atraente, responsiva para dspositivos móveis e uma experiência de usuário fluida, graças às tecnologias utilizadas em seu desenvolvimento.
+Ela consome dados da API pública do TMDB para fornecer aos usuários informações sobre diversos filmes. A aplicação oferece uma interface visualmente atraente, 
+responsiva para dspositivos móveis e uma experiência de usuário fluida, graças às tecnologias utilizadas em seu desenvolvimento.
 
 ## ✔️ Principais Funcionalidades
 
--   [x] Filmes em Destaque: O site exibe uma lista de filmes em destaque, paginados para melhorar a navegação e a experiência do usuário.
--   [x] Detalhes do Filme: Além dos detalhes básicos como título e sinopse, os usuários podem ver informações detalhadas sobre os filmes, como elenco principal, avaliação, data de estreia, tempo de duração, orçamento e receita de bilheteria.
--   [x] Recomendações: Para cada filme exibido, o site também fornece uma lista de filmes recomendados com base em interesses semelhantes.
--   [x] Pesquisa: Os usuários podem pesquisar filmes especificamente pelo título, facilitando a localização de filmes específicos.
-
-## 🖥️ Demo
-
-🔗 <a href="https://that-movie.vercel.app" target="_blank">that-movie.vercel.app</a>
-
-## ✨ Protótipo
-
-🔗 <a href="https://www.figma.com/proto/OfHQGvLbLtZa2qOmIsKWkm/Project-That-Movie?type=design&node-id=1-41&t=3sXOtCApI6DIEyvW-1&scaling=min-zoom&page-id=1%3A40&starting-point-node-id=1%3A41&mode=design" target="_blank">Figma</a>
+-   [x] **Filmes em Destaque**: O site exibe uma lista de filmes em destaque, paginados para melhorar a navegação e a experiência do usuário.
+-   [x] **Detalhes do Filme**: Além dos detalhes básicos como título e sinopse, os usuários podem ver informações detalhadas sobre os filmes, como elenco principal, avaliação, data de estreia, tempo de duração, orçamento e receita de bilheteria.
+-   [x] **Recomendações**: Para cada filme exibido, o site também fornece uma lista de filmes recomendados com base em interesses semelhantes.
+-   [x] **Pesquisa**: Os usuários podem pesquisar filmes especificamente pelo título, facilitando a localização de filmes específicos.
 
 ## 🛠 Tecnologias Utilizadas
 
 As seguintes tecnologias foram utlizadas na construção deste projeto:
 
-- [React](https://pt-br.reactjs.org/)
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
+- [React JS](https://pt-br.reactjs.org/) — Uma biblioteca JavaScript popular para construir interfaces de usuário interativas.
+- [Next.js](https://nextjs.org/) — Um framework React que oferece renderização do lado do servidor (SSR), geração estática (SSG), entre muitos outros recursos.
+- [TypeScript](https://www.typescriptlang.org/) — O TypeScript é um superconjunto tipado que adiciona tipagem estática opcional e outros recursos de linguagem ao JavaScript.
+- [Tailwind CSS](https://tailwindcss.com/) — Um framework CSS que oferece várias classes para utilização já pré-estilizadas.
 
-## 📌 Links e recursos úteis
+## 📌 Links Úteis
 
-- [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started)
+- [Demo](https://that-movie.vercel.app)
+- [Figma - Protótipo](https://www.figma.com/proto/OfHQGvLbLtZa2qOmIsKWkm/Project-That-Movie?type=design&node-id=1-41&t=3sXOtCApI6DIEyvW-1&scaling=min-zoom&page-id=1%3A40&starting-point-node-id=1%3A41&mode=design)
+- [TMDB API - Docs](https://developer.themoviedb.org/reference/intro/getting-started)
 
 ## 🚀 Instalação e Execução
 
