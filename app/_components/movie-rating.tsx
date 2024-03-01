@@ -13,7 +13,7 @@ export function MovieRating({ rating = 0 }: Props) {
     <div className="flex items-center gap-2">
       <StarIcon className="size-5 fill-current text-amber-400" />
       <span className="text-xl font-medium leading-none">
-        <CountUp end={rating} decimals={1} />
+        <CountUp end={rating} decimals={1} /> / 10
       </span>
     </div>
   )
