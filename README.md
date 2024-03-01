@@ -1,4 +1,4 @@
-<!-- <h1 align="center"> That Movie </h1> -->
+<h1 align="center"> That Movie </h1>
 
 ![Cover](/Cover.png)
 
